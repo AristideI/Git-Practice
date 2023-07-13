@@ -413,3 +413,143 @@ $ vi README.md
 
 walte@Walter MINGW64 /d/Git-Practice (main)
 
+
+
+walte@Walter MINGW64 /d/Git-Practice (ft/services-redesign)
+$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+
+walte@Walter MINGW64 /d/Git-Practice (ft/team-page)
+$ vi team.html
+
+walte@Walter MINGW64 /d/Git-Practice (ft/team-page)
+$ git add .
+warning: in the working copy of 'team.html', LF will be replaced by CRLF the next time Git touches it
+
+walte@Walter MINGW64 /d/Git-Practice (ft/team-page)
+$ git commit -m "team page"
+[ft/team-page c57af6b] team page
+ 1 file changed, 9 insertions(+)
+ create mode 100644 team.html
+
+walte@Walter MINGW64 /d/Git-Practice (ft/team-page)
+$ git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream Git-Practice ft/team-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+walte@Walter MINGW64 /d/Git-Practice (ft/team-page)
+$ git push --set-upstream Git-Practice ft/team-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 771 bytes | 385.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting:
+remote:      https://github.com/AristideI/Git-Practice/pull/new/ft/team-page
+remote:
+To https://github.com/AristideI/Git-Practice.git
+ * [new branch]      ft/team-page -> ft/team-page
+branch 'ft/team-page' set up to track 'Git-Practice/ft/team-page'.
+
+walte@Walter MINGW64 /d/Git-Practice (ft/team-page)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'Git-Practice/main'.
+
+walte@Walter MINGW64 /d/Git-Practice (main)
+$ git checkout -b contact-age
+Switched to a new branch 'contact-age'
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git checkout team-page
+error: pathspec 'team-page' did not match any file(s) known to git
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git log
+commit bcc3fbd07b15fc249c671240092e414c2cdf1a04 (HEAD -> contact-age, Git-Practice/main, main)
+Merge: 86f2be8 a2bcd52
+Author: AristideI <115247039+AristideI@users.noreply.github.com>
+Date:   Thu Jul 13 10:43:51 2023 +0200
+
+    Merge pull request #1 from AristideI/dev2
+
+    Dev2
+
+commit a2bcd52e6e0ca05bba2f112935dc3271a5c6f250 (Git-Practice/dev2)
+Merge: 1a7e40c 86f2be8
+Author: AristideI <115247039+AristideI@users.noreply.github.com>
+Date:   Thu Jul 13 10:43:40 2023 +0200
+
+    Merge branch 'main' into dev2
+
+commit 86f2be8d8fdb2e2f6741f8d7b53b4c2db7804eba
+Merge: 7ef4445 cfc713c
+Author: AristideI <115247039+AristideI@users.noreply.github.com>
+Date:   Thu Jul 13 10:42:15 2023 +0200
+
+    Merge pull request #2 from AristideI/ft/bundle-2
+
+    Ft/bundle 2
+
+commit cfc713ccc0fbc5aec8263f30befae6ced4bece4a (Git-Practice/ft/bundle-2)
+Merge: 70e620b 7ef4445
+Author: AristideI <115247039+AristideI@users.noreply.github.com>
+Date:   Thu Jul 13 10:41:59 2023 +0200
+
+    Merge branch 'main' into ft/bundle-2
+
+commit 70e620b2473a4da2ae1ee51d9740dc1cacadb666 (ft/bundle-2)
+Author: AristideI <a.isingizwe@alustudent.com>
+Date:   Wed Jul 12 20:17:31 2023 +0200
+
+    Service page
+
+commit 1a7e40cf3641f57b3099438f7f0036bb54a4e988
+Author: AristideI <a.isingizwe@alustudent.com>
+Date:   Tue Jul 11 13:13:50 2023 +0200
+
+    Stash part
+
+commit 6fa2818ccaceb2ca7235d2583da01e86e389974c
+Author: AristideI <a.isingizwe@alustudent.com>
+Date:   Tue Jul 11 13:12:06 2023 +0200
+
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git checkout contact-page
+error: pathspec 'contact-page' did not match any file(s) known to git
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git cherry-pick bcc3fbd07b15fc249c671240092e414c2cdf1a04
+error: commit bcc3fbd07b15fc249c671240092e414c2cdf1a04 is a merge but no -m option was given.
+fatal: cherry-pick failed
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git cherry-pick -m bcc3fbd07b15fc249c671240092e414c2cdf1a04
+error: option `mainline' expects a number greater than zero
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git cherry-pick team-page
+fatal: bad revision 'team-page'
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git cherry-pick -m bcc3fbd07b15fc249c671240092e414c2cdf1a04
+error: option `mainline' expects a number greater than zero
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$ git cherry-pick bcc3fbd07b15fc249c671240092e414c2cdf1a04
+error: commit bcc3fbd07b15fc249c671240092e414c2cdf1a04 is a merge but no -m option was given.
+fatal: cherry-pick failed
+
+walte@Walter MINGW64 /d/Git-Practice (contact-age)
+$
+
