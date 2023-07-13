@@ -1,4 +1,4 @@
-ft/bundle-2
+
 walte@Walter MINGW64 /d/Git-Practice (dev2)
 $ vi home.html
 
@@ -155,8 +155,7 @@ $ git commit -m "finished with stash"
 walte@Walter MINGW64 /d/Git-Practice (dev2)
 $ ^C
 
-walt
-=======
+
 walte@Walter MINGW64 /d/Git-Practice
 $ git init
 Initialized empty Git repository in D:/Git-Practice/.git/
@@ -413,4 +412,4 @@ walte@Walter MINGW64 /d/Git-Practice (main)
 $ vi README.md
 
 walte@Walter MINGW64 /d/Git-Practice (main)
-$
+
